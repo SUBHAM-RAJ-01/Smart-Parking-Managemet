@@ -1,0 +1,354 @@
+/* Global Styles */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2c3e50;
+  --success-color: #27ae60;
+  --danger-color: #e74c3c;
+  --light-color: #f5f5f5;
+  --dark-color: #333;
+  --border-color: #ddd;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--dark-color);
+  background-color: var(--light-color);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Card Styles */
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s, opacity 0.3s;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #1a252f;
+}
+
+.btn-success {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #219653;
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+/* Alert Styles */
+.alert {
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Header and Navigation */
+.header {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 20px 0;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Dashboard Styles */
+.dashboard {
+  padding: 20px 0;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.wallet-info {
+  text-align: center;
+  padding: 15px;
+}
+
+.balance {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--secondary-color);
+  margin: 10px 0;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Transaction List */
+.transaction-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.transaction-item {
+  padding: 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.transaction-amount {
+  font-weight: 600;
+}
+
+.amount-positive {
+  color: var(--success-color);
+}
+
+.amount-negative {
+  color: var(--danger-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+  }
+  
+  .nav {
+    flex-direction: column;
+  }
+  
+  .nav-links {
+    margin-top: 15px;
+  }
+  
+  .nav-links li {
+    margin: 0 10px;
+  }
+}
+
+/* Parking Layout Styles */
+.parking-layout {
+  padding: 15px;
+}
+
+.parking-container {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+}
+
+.parking-slot {
+  padding: 15px 10px;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid #ddd;
+  position: relative;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.parking-slot:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.parking-slot.available {
+  background-color: #e8f5e9;
+  border-color: #1b5e20;
+}
+
+.parking-slot.occupied {
+  background-color: #ffebee;
+  border-color: #b71c1c;
+}
+
+.parking-slot.user-slot {
+  background-color: #e3f2fd;
+  border-color: #0d47a1;
+  border-width: 2px;
+  box-shadow: 0 0 8px rgba(13, 71, 161, 0.5);
+}
+
+.parking-slot-number {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.parking-slot-status {
+  font-size: 12px;
+}
+
+.parking-driveway {
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #555;
+  border-radius: 5px;
+  font-size: 12px;
+  text-align: center;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.parking-legend {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border: 1px solid;
+  margin-right: 5px;
+} 
