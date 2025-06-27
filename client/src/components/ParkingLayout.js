@@ -10,7 +10,7 @@ const ParkingLayout = ({ user }) => {
     const fetchParkingSlots = async () => {
       try {
         setLoading(true);
-        const response = await axios.get('/api/slots');
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/slots`);
         if (response.data.success) {
           setSlots(response.data.slots);
         }

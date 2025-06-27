@@ -33,18 +33,18 @@ const Dashboard = () => {
       try {
         setLoading(true);
         // Fetch updated user data
-        const userResponse = await axios.get(`/api/users/${userData._id}`);
+        const userResponse = await axios.get(`${process.env.REACT_APP_API_URL}/api/users/${userData._id}`);
         if (userResponse.data.success) {
           setUser(userResponse.data.user);
           localStorage.setItem('user', JSON.stringify(userResponse.data.user));
         } 
         // Fetch transactions
-        const transactionsResponse = await axios.get(`/api/users/${userData._id}/transactions`);
+        const transactionsResponse = await axios.get(`${process.env.REACT_APP_API_URL}/api/users/${userData._id}/transactions`);
         if (transactionsResponse.data.success) {
           setTransactions(transactionsResponse.data.transactions);
         }
         // Fetch parking slots info
-        const slotsResponse = await axios.get('/api/slots/status/available');
+        const slotsResponse = await axios.get(`${process.env.REACT_APP_API_URL}/api/slots/status/available`);
         if (slotsResponse.data.success) {
           setParkingInfo({
             totalSlots: slotsResponse.data.totalSlots,
@@ -76,7 +76,7 @@ const Dashboard = () => {
     // Refresh transactions after payment
     const fetchTransactions = async () => {
       try {
-        const response = await axios.get(`/api/users/${user._id}/transactions`);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/users/${user._id}/transactions`);
         if (response.data.success) {
           setTransactions(response.data.transactions);
         }

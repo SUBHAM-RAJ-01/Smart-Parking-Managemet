@@ -29,7 +29,7 @@ const Login = () => {
     setError('');
     
     try {
-      const response = await axios.post('/api/users/login', { rfid });
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/users/login`, { rfid });
       
       if (response.data.success) {
         localStorage.setItem('user', JSON.stringify(response.data.user));

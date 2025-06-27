@@ -44,7 +44,7 @@ const Dashboard = () => {
   
   const fetchDashboardSummary = async () => {
     try {
-      const response = await axios.get('/api/admin/dashboard/summary');
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/admin/dashboard/summary`);
       
       if (response.data.success) {
         setDashboardStats(response.data);
@@ -57,7 +57,7 @@ const Dashboard = () => {
   const fetchSlots = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('/api/slots');
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/slots`);
       
       if (response.data.success) {
         setSlots(response.data.slots);
@@ -72,7 +72,7 @@ const Dashboard = () => {
   
   const handleForceExit = async (slotNumber) => {
     try {
-      const response = await axios.post(`/api/admin/slots/${slotNumber}/force-exit`);
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/admin/slots/${slotNumber}/force-exit`);
       
       if (response.data.success) {
         // Update slots after force exit
@@ -87,7 +87,7 @@ const Dashboard = () => {
   
   const handleViewUser = async (slotNumber) => {
     try {
-      const response = await axios.get(`/api/slots/${slotNumber}/details`);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/slots/${slotNumber}/details`);
       
       if (response.data.success && response.data.user) {
         setSelectedUser({

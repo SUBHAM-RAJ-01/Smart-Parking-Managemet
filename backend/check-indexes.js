@@ -4,7 +4,7 @@ const User = require('./models/User');
 
 async function checkIndexes() {
   try {
-    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/smart-parking');
+    await mongoose.connect(process.env.MONGODB_URI);
     console.log('MongoDB connected');
     
     // Get all indexes on User collection

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './PaymentModal.css';
+import { useNavigate } from 'react-router-dom';
 
 const PaymentModal = ({ user, onClose, onPaymentSuccess }) => {
   const [amount, setAmount] = useState(100);
@@ -16,6 +17,7 @@ const PaymentModal = ({ user, onClose, onPaymentSuccess }) => {
   });
   const [upiId, setUpiId] = useState('');
   const [bankName, setBankName] = useState('');
+  const navigate = useNavigate();
 
   const handleAmountSubmit = (e) => {
     e.preventDefault();
@@ -59,6 +61,8 @@ const PaymentModal = ({ user, onClose, onPaymentSuccess }) => {
       
       if (response.data.success) {
         onPaymentSuccess(response.data.user);
+        onClose();
+        navigate('/dashboard');
       }
     } catch (error) {
       if (error.response && error.response.data) {

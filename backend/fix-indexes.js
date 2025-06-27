@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 async function fixIndexes() {
   try {
-    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/smart-parking');
+    await mongoose.connect(process.env.MONGODB_URI);
     console.log('MongoDB connected');
     
     const db = mongoose.connection;
