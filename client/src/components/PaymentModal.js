@@ -3,6 +3,8 @@ import axios from 'axios';
 import './PaymentModal.css';
 import { useNavigate } from 'react-router-dom';
 
+const apiUrl = process.env.REACT_APP_API_URL || '';
+
 const PaymentModal = ({ user, onClose, onPaymentSuccess }) => {
   const [amount, setAmount] = useState(100);
   const [paymentMethod, setPaymentMethod] = useState('CARD');
@@ -54,7 +56,7 @@ const PaymentModal = ({ user, onClose, onPaymentSuccess }) => {
     setError('');
     
     try {
-      const response = await axios.post(`/api/users/${user._id}/wallet/add`, {
+      const response = await axios.post(`${apiUrl}/api/users/${user._id}/wallet/add`, {
         amount,
         paymentMethod
       });
