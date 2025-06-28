@@ -75,3 +75,7 @@ A comprehensive RFID-based Smart Parking System with MQTT communication, wallet-
 ### Admin
 - Username: admin
 - Password: admin123 
+
+## Deployment Links
+Client : https://el6client.netlify.app
+Admin : https://el6admin.netlify.app
